@@ -7,13 +7,14 @@
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            margin: 0;
+            margin: 50px;
             padding: 0;
             text-align: center;
         }
         .container {
             margin: 20px auto;
-            max-width: 600px;
+            max-width: 90%;
+            box-sizing: border-box;
         }
         textarea {
             width: 100%;
@@ -21,18 +22,22 @@
             margin-bottom: 10px;
             font-size: 15pt;
             font-family: 'Noto Sans KR', sans-serif;
+            box-sizing: border-box;
         }
         button {
             margin-top: 10px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
+            width: 100%;
+            max-width: 300px;
         }
         #result {
             margin-top: 20px;
             padding: 10px;
             background-color: #f4f4f4;
             border: 1px solid #ddd;
+            word-wrap: break-word;
         }
         .address-block {
             display: inline-block;
@@ -41,6 +46,7 @@
             background-color: #e0e0e0;
             border-radius: 5px;
             cursor: pointer;
+            word-break: break-word;
         }
         .address-block:hover {
             background-color: #d4d4d4;
@@ -63,14 +69,14 @@
             <button id="copyButton" style="display: none;" onclick="copyToClipboard()">전체 복사</button>
         </div>
 
-        <p>오늘 방문자 수: <span id="visitorCount">0</span></p>
+        
     </div>
 
     <div class="footer">
-        <p>광고:</p>
+        
         <div id="googleAd">
             <!-- Google AdSense placeholder -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3766333419636128" crossorigin="anonymous"></script>
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
@@ -80,10 +86,7 @@
             <script>
                  (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-        </div>
-    </div>
-
-    <script>
+        </div><p style="font-size: 8pt;">오늘 방문자 수: <span id="visitorCount">0</span></p></div><script>
         let visitorCount = 0;
 
         function updateVisitorCount() {
@@ -124,7 +127,7 @@
 
                 if (!data.results.juso.length) {
                     alert('주소를 더 구체적으로 입력해주세요.');
-                    document.getElementById('convertedAddress').innerText = '(유효한 주소를 찾을 수 없습니다)';
+                    document.getElementById('convertedAddress').innerHTML = '(유효한 주소를 찾을 수 없습니다)';
                     document.getElementById('copyButton').style.display = 'none';
                     document.getElementById('zipCode').innerText = '';
                     return;
