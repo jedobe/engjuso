@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🇰🇷 → 🇺🇸 한글 주소를 영문 주소로 변환</title>
+    <title>영문주소 변환 | joosi.site</title>
+    <meta name="description" content="한글 주소를 쉽고 빠르게 영문 주소로 변환해주는 무료 서비스. 영문주소 변환이 필요하면 joosi.site를 방문하세요.">
+    <meta name="keywords" content="영문주소 변환, 영문주소, 주소 번역, 주소 변환기">
+    <meta name="author" content="joosi.site">
     <style>
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            margin: 50px;
+            margin: 0;
             padding: 0;
             text-align: center;
         }
@@ -58,7 +61,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>🇰🇷 → 🇺🇸 한글 주소를 영문 주소로 변환</h1>
+        <h1>한글 주소를 영문 주소로 변환하세요 | 영문주소 변환 서비스</h1>
         <textarea id="koreanAddress" placeholder="주소를 입력하세요..."></textarea><br>
         <button onclick="convertAddress()">주소 변환</button>
 
@@ -69,14 +72,15 @@
             <button id="copyButton" style="display: none;" onclick="copyToClipboard()">전체 복사</button>
         </div>
 
-        
+        <p>오늘 방문자 수: <span id="visitorCount">0</span></p>
     </div>
 
     <div class="footer">
-        
+        <p>광고:</p>
         <div id="googleAd">
-            <!-- Google AdSense placeholder -->
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3766333419636128" crossorigin="anonymous"></script>
+            <!-- Google AdSense 광고 -->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX"
+                    crossorigin="anonymous"></script>
             <ins class="adsbygoogle"
                  style="display:block"
                  data-ad-client="ca-pub-XXXXXXXXXXXXXXX"
@@ -84,9 +88,12 @@
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
             <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
+                (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
-        </div><p style="font-size: 8pt;">오늘 방문자 수: <span id="visitorCount">0</span></p></div><script>
+        </div>
+    </div>
+
+    <script>
         let visitorCount = 0;
 
         function updateVisitorCount() {
